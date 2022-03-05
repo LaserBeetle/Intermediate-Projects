@@ -78,7 +78,6 @@ def machine_start():
         check_resources(inp)
         charge_money(inp)
         make_drink(inp)
-        print(resources)
     else:
         print("Invalid input.\n\n")
         machine_start()
