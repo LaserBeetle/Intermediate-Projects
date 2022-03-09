@@ -1,0 +1,46 @@
+question_data = [
+    {"question": "In the 1988 film 'Akira', Tetsuo ends up destroying Tokyo.", "correct_answer": "True"},
+    {"question": "Clefairy was intended to be Ash's starting Pokémon in the pilot episode of the cartoon.",
+     "correct_answer": "True"},
+    {"question": "The animated film 'Spirited Away' won the Academy Award for "
+                 "Best Animated Feature at the 75th Academy Awards in 2003.", "correct_answer": "True"},
+    {"question": "Studio Ghibli is a Japanese animation studio responsible for the films "
+                 "'Wolf Children'; and 'The Boy and the Beast'.",
+     "correct_answer": "False"},
+    {"question": "In Kill La Kill, the weapon of the main protagonist is a katana.", "correct_answer": "False"},
+    {"question": "The anime 'Lucky Star'; follows the story of one girl who is unaware she is God.",
+     "correct_answer": "False"},
+    {"question": "No Game No Life first aired in 2014.", "correct_answer": "True"},
+    {"question": "Gosho Aoyama Made This Series: (Detective Conan \/ Case Closed!)", "correct_answer": "True"},
+    {"question": "In the 'Melancholy of Haruhi Suzumiya' series, the narrator goes by the nickname Kyon.",
+     "correct_answer": "True"},
+    {"question": "The anime Attack on Titan was directed by Tetsuo Araki, "
+                 "the same person who directed the anime Highschool of the Dead.",
+     "correct_answer": "True"},
+    {"question": "In Pokémon, Ash's Pikachu refuses to go into a pokeball.", "correct_answer": "True"},
+    {"question": "Throughout the entirety of 'Dragon Ball Z', "
+                 "Goku only kills two characters: a miniboss named Yakon and Kid Buu.",
+     "correct_answer": "True"},
+    {"question": "In the 'Toaru Kagaku no Railgun' anime, "
+                 "espers can only reach a maximum of level 6 in their abilities.",
+     "correct_answer": "False"},
+    {"question": "The name of the attack 'Kamehameha' in Dragon Ball Z "
+                 "was named after a famous king of Hawaii.",
+     "correct_answer": "True"},
+    {"question": "Kiznaiver is an adaptation of a manga.", "correct_answer": "False"},
+    {"question": "Druid is a mage class in 'Log Horizon'.", "correct_answer": "False"},
+    {"question": "In 'JoJo's Bizarre Adventure', Father Enrico Pucchi uses a total of 3 stands in Part 6: Stone Ocean.",
+     "correct_answer": "True"},
+    {"question": "In the 'To Love-Ru' series, Golden Darkness is sent to kill Lala Deviluke.",
+     "correct_answer": "False"},
+    {"question": "In 'To Love-Ru: Darkness', Yami reveals her real name is Eve.", "correct_answer": "True"},
+    {"question": "In the 'To Love-Ru' series, Peke is considered a female robot.", "correct_answer": "True"},
+    {"question": "In Chobits, Hideki found Chii in his apartment.", "correct_answer": "False"},
+    {"question": "In the 'Kagerou Daze' series, Shintaro Kisaragi is prominently shown with the color red.",
+     "correct_answer": "True"},
+    {"question": "The character Plum from 'No Game No Life' is a girl.", "correct_answer": "False"},
+    {"question": "In Full Metal Panic!, Whispered are those who are capable of creating Black Technology.",
+     "correct_answer": "True"},
+    {"question": "The protagonist in 'Humanity Has Declined' has no discernable name "
+                 "and is simply referred to as 'Watashi'; for most of the series.",
+     "correct_answer": "True"}]
