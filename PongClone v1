@@ -1,0 +1,61 @@
+import turtle
+import paddle
+import ball
+import time
+import score
+
+screen = turtle.Screen()
+screen.setup(width=800, height=600)
+screen.title("Pong Clone")
+screen.tracer(0)
+
+player = paddle.Paddle()
+ball = ball.Ball()
+score = score.Score()
+screen.update()
+
+screen.listen()
+screen.onkey(player.up2, "Up")
+screen.onkey(player.down2, "Down")
+screen.onkey(player.up, "w")
+screen.onkey(player.down, "s")
+
+
+def game_start():
+    game_on = True
+    while game_on:
+        screen.update()
+        for paddles in player.player1:
+            if ball.distance(paddles) <= 20:
+                ball.bounce1()
+
+        for paddles in player.player2:
+            if ball.distance(paddles) <= 20:
+                ball.bounce2()
+
+        if ball.xcor() >= 380:
+            game_on = False
+            ball.home()
+            score.update_1()
+            ball.move_speed = .1
+
+        elif ball.xcor() <= -380:
+            game_on = False
+            ball.home()
+            score.update_2()
+            ball.move_speed = .1
+
+        elif ball.ycor() >= 280:
+            ball.top_bounce()
+
+        elif ball.ycor() <= -280:
+            ball.bot_bounce()
+
+        else:
+            time.sleep(ball.move_speed)
+            ball.move()
+
+
+screen.onkey(game_start, "space")
+
+screen.exitonclick()
