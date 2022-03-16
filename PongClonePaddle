@@ -1,0 +1,51 @@
+import turtle
+
+PLAYER1_POS = [(-380, 20), (-380, 0), (-380, -20)]
+PLAYER2_POS = [(380, 20), (380, 0), (380, -20)]
+
+
+class Paddle(turtle.Turtle):
+    player1 = []
+    player2 = []
+
+    def __init__(self):
+        super().__init__()
+        for position in PLAYER1_POS:
+            new_pad = turtle.Turtle()
+            new_pad.speed(0)
+            new_pad.penup()
+            new_pad.shape("square")
+            new_pad.turtlesize(stretch_len=2)
+            new_pad.goto(position)
+            new_pad.setheading(90)
+            self.player1.append(new_pad)
+
+        for position in PLAYER2_POS:
+            new_pad = turtle.Turtle()
+            new_pad.speed(0)
+            new_pad.penup()
+            new_pad.shape("square")
+            new_pad.turtlesize(stretch_len=2)
+            new_pad.goto(position)
+            new_pad.setheading(90)
+            self.player2.append(new_pad)
+
+    def up(self):
+        if self.player1[0].distance(-380, 250) > 20:
+            for pad in self.player1:
+                pad.forward(50)
+
+    def down(self):
+        if self.player1[2].distance(-380, -250) > 20:
+            for pad in self.player1:
+                pad.backward(50)
+
+    def up2(self):
+        if self.player2[0].distance(380, 250) > 20:
+            for pad in self.player2:
+                pad.forward(50)
+
+    def down2(self):
+        if self.player2[2].distance(380, -250) > 20:
+            for pad in self.player2:
+                pad.backward(50)
