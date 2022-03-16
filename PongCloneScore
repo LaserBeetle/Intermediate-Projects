@@ -1,0 +1,30 @@
+import turtle
+
+BOARD_POS = [(-50, 250), (50, 250)]
+
+
+class Score(turtle.Turtle):
+    score_1 = 0
+    score_2 = 0
+    scoreboard = []
+
+    def __init__(self):
+        super().__init__()
+        for position in BOARD_POS:
+            new_score = turtle.Turtle()
+            new_score.speed(0)
+            self.scoreboard.append(new_score)
+            new_score.penup()
+            new_score.hideturtle()
+            new_score.goto(position)
+            new_score.write(arg="0", align="center", font=("Times", 30, "normal"))
+
+    def update_1(self):
+        self.score_1 += 1
+        self.scoreboard[0].clear()
+        self.scoreboard[0].write(arg=self.score_1, align="center", font=("Times", 30, "normal"))
+
+    def update_2(self):
+        self.score_2 += 1
+        self.scoreboard[1].clear()
+        self.scoreboard[1].write(arg=self.score_2, align="center", font=("Times", 30, "normal"))
