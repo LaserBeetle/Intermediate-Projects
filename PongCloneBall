@@ -1,0 +1,49 @@
+import turtle
+import random
+
+
+class Ball(turtle.Turtle):
+    def __init__(self):
+        super().__init__()
+        self.shape("circle")
+        self.shapesize(stretch_wid=0.5)
+        self.penup()
+        self.speed(10)
+        self.move_speed = 0.1
+
+    def move(self):
+        self.forward(20)
+
+    def bounce1(self):
+        self.setheading(0)
+        self.left(random.randint(-45, 45))
+        self.right(random.randint(-45, 45))
+        self.move_speed *= .9
+        self.move()
+
+    def bounce2(self):
+        self.setheading(180)
+        self.left(random.randint(-45, 45))
+        self.right(random.randint(-45, 45))
+        self.move_speed *= .9
+        self.move()
+
+    def top_bounce(self):
+        if 270 > self.heading() > 90:
+            self.left(45)
+            self.forward(20)
+            self.move()
+        else:
+            self.right(45)
+            self.forward(20)
+            self.move()
+
+    def bot_bounce(self):
+        if 270 > self.heading() > 90:
+            self.right(45)
+            self.forward(20)
+            self.move()
+        else:
+            self.left(45)
+            self.forward(20)
+            self.move()
