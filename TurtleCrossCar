@@ -1,0 +1,25 @@
+import turtle
+import random
+
+COLORS = ["red", "blue", "green", "yellow", "purple", "brown", "orange", "pink", "black", "grey"]
+CAR_SPEED = 10
+
+
+class Car(turtle.Turtle):
+    car_list = []
+
+    def __init__(self):
+        super().__init__()
+        self.spawn()
+
+    def spawn(self):
+        self.penup()
+        self.shape("square")
+        self.shapesize(stretch_len=2)
+        self.setheading(180)
+        self.color(random.choice(COLORS))
+        self.goto(x=-300, y=random.randrange(-250, 250))
+        self.car_list.append(self)
+
+    def move(self, cars, level):
+        cars.forward(CAR_SPEED + (level*2))
