@@ -1,0 +1,17 @@
+import turtle
+
+
+class Level(turtle.Turtle):
+    def __init__(self):
+        super().__init__()
+        self.hideturtle()
+        self.pen()
+        self.goto(0, 250)
+
+    def level_up(self, level):
+        self.clear()
+        self.write(arg=f"Level: {level}", align="center", font=("Times", 20, "normal"))
+
+    def lose(self, level):
+        self.home()
+        self.write(arg=f"You lose! Final score: {level}", align="center", font=("Times", 20, "normal"))
