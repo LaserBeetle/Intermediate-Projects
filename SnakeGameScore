@@ -5,17 +5,21 @@ class Score(turtle.Turtle):
 
     def __init__(self):
         super().__init__()
-        self.score = -1
+        with open("data.txt") as record:
+            self.hiscore = record.read()
+        self.score = 0
         self.hideturtle()
         self.penup()
-        self.goto(x=0, y=270)
         self.count()
 
     def count(self):
+        self.goto(x=-100, y=270)
         self.clear()
-        self.score += 1
-        self.write(arg=f"Score: {self.score}", align="center", font=("Arial", 15, "normal"))
+        self.write(arg=f"Score: {self.score}   HiScore: {self.hiscore}", align="left", font=("Arial", 15, "normal"))
 
-    def game_over(self):
-        self.goto(0, 0)
-        self.write(arg="Game Over", align="center", font=("Arial", 30, "normal"))
+    def hi_score(self):
+        if self.score > int(self.hiscore):
+            self.hiscore = self.score
+            with open("data.txt", mode="w") as record:
+                record.write(str(self.hiscore))
+        self.score = 0
