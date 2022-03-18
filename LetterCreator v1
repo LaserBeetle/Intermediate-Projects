@@ -1,0 +1,15 @@
+ITEM_LIST = "../Input/Names/invited_names.txt"
+TEXT = "../Input/Letters/starting_letter.txt"
+
+with open(ITEM_LIST, "r") as name_list:
+    list_of_names = name_list.readlines()
+
+with open(TEXT, "r") as letter:
+    formatted_letter = letter.read()
+
+    for names in list_of_names:
+        stripped_name = names.strip()
+        named_letter = formatted_letter.replace("[name]", stripped_name)
+
+        with open(f"./ReadyToSend/Letter{stripped_name}.txt", "w") as new_letter:
+            new_letter.write(named_letter)
