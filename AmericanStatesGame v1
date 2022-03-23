@@ -31,9 +31,7 @@ while correct_guesses < 50:
     if answer == "Exit":
         break
 
-for state in guessed_states:
-    if state in states:
-        states.remove(state)
+missing_states = [state for state in states if state not in guessed_states]
 
 unknown_states = pandas.DataFrame(states)
 unknown_states.to_csv("unknown_states")
