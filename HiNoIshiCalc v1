@@ -23,6 +23,9 @@ def calculate():
     soushiken()
     ninjutsu()
     genjutsu()
+    hitpoints()
+    stamina()
+    chakra()
 
 
 def jyuuken():
@@ -89,6 +92,34 @@ def genjutsu():
     gen_cost = int(cch * 5 / jut)
 
     gen_entry.insert(0, f"{gen_dmg}/{gen_cost}")
+
+
+def hitpoints():
+    vit = int(vit_entry.get())
+    hp_entry.delete(0, tkinter.END)
+
+    hp = vit * 15 + 30
+
+    hp_entry.insert(0, f"{hp}")
+
+
+def stamina():
+    sta = int(sta_entry.get())
+    st_entry.delete(0, tkinter.END)
+
+    st = sta * 15 + 30
+
+    st_entry.insert(0, f"{st}")
+
+
+def chakra():
+    cha = int(cha_entry.get())
+    ch_entry.delete(0, tkinter.END)
+
+    ch = cha * 15
+
+    ch_entry.insert(0, f"{ch}")
+
 
 
 for_label = tkinter.Label(text="FOR")
@@ -169,19 +200,16 @@ separation.grid(column=0, row=5, columnspan=3)
 hp_label = tkinter.Label(text="HP")
 hp_label.grid(column=0, row=6)
 hp_entry = tkinter.Entry(width=4)
-hp_entry.insert(0, f"{int(vit_entry.get()) * 15 + 30}")
 hp_entry.grid(column=1, row=6)
 
 ch_label = tkinter.Label(text="CH")
 ch_label.grid(column=2, row=6)
 ch_entry = tkinter.Entry(width=4)
-ch_entry.insert(0, f"{int(cha_entry.get()) * 15}")
 ch_entry.grid(column=3, row=6)
 
 st_label = tkinter.Label(text="ST")
 st_label.grid(column=4, row=6)
 st_entry = tkinter.Entry(width=4)
-st_entry.insert(0, f"{int(sta_entry.get()) * 15 + 30}")
 st_entry.grid(column=5, row=6)
 
 separation = tkinter.Label()
