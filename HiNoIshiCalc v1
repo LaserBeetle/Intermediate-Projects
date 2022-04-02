@@ -1,0 +1,226 @@
+import tkinter
+
+root = tkinter.Tk()
+
+FOR = 1
+AGI = 6
+DEX = 6
+VIT = 1
+STA = 5
+PER = 8
+CAR = 6
+CON = 3
+FOC = 3
+JUT = 3
+CHA = 5
+CCH = 3
+
+
+def calculate():
+    jyuuken()
+    kaiten()
+    sanjuuni()
+    soushiken()
+    ninjutsu()
+    genjutsu()
+
+
+def jyuuken():
+    dex = int(dex_entry.get())
+    sta = int(sta_entry.get())
+    jyu_entry.delete(0, tkinter.END)
+
+    jyu_dmg = dex * 2
+    jyu_cost = int(dex * 5 / sta)
+
+    jyu_entry.insert(0, f"{jyu_dmg}/{jyu_cost}")
+
+
+def kaiten():
+    jut = int(jut_entry.get())
+    cch = int(cch_entry.get())
+    kai_entry.delete(0, tkinter.END)
+
+    kai_dmg = jut * 5
+    kai_cost = int(jut * 10 / cch)
+
+    kai_entry.insert(0, f"{kai_dmg}/{kai_cost}")
+
+
+def sanjuuni():
+    dex = int(dex_entry.get())
+    sta = int(sta_entry.get())
+    san_entry.delete(0, tkinter.END)
+
+    san_dmg = dex * 8
+    san_cost = int(dex * 20 / sta)
+
+    san_entry.insert(0, f"{san_dmg}/{san_cost}")
+
+
+def soushiken():
+    dex = int(dex_entry.get())
+    sta = int(sta_entry.get())
+    sou_entry.delete(0, tkinter.END)
+
+    sou_dmg = dex * 12
+    sou_cost = int(dex * 35 / sta)
+
+    sou_entry.insert(0, f"{sou_dmg}/{sou_cost}")
+
+
+def ninjutsu():
+    jut = int(jut_entry.get())
+    cch = int(cch_entry.get())
+    nin_entry.delete(0, tkinter.END)
+
+    nin_dmg = jut * 2
+    nin_cost = int(jut * 5/ cch)
+
+    nin_entry.insert(0, f"{nin_dmg}/{nin_cost}")
+
+
+def genjutsu():
+    jut = int(jut_entry.get())
+    cch = int(cch_entry.get())
+    gen_entry.delete(0, tkinter.END)
+
+    gen_dmg = cch * 2
+    gen_cost = int(cch * 5 / jut)
+
+    gen_entry.insert(0, f"{gen_dmg}/{gen_cost}")
+
+
+for_label = tkinter.Label(text="FOR")
+for_label.grid(column=0, row=0)
+for_entry = tkinter.Entry(width=2)
+for_entry.insert(0, f"{FOR}")
+for_entry.grid(column=1, row=0)
+
+agi_label = tkinter.Label(text="AGI")
+agi_label.grid(column=0, row=1)
+agi_entry = tkinter.Entry(width=2)
+agi_entry.insert(0, f"{AGI}")
+agi_entry.grid(column=1, row=1)
+
+dex_label = tkinter.Label(text="DEX")
+dex_label.grid(column=0, row=2)
+dex_entry = tkinter.Entry(width=2)
+dex_entry.insert(0, f"{DEX}")
+dex_entry.grid(column=1, row=2)
+
+vit_label = tkinter.Label(text="VIT")
+vit_label.grid(column=0, row=3)
+vit_entry = tkinter.Entry(width=2)
+vit_entry.insert(0, f"{VIT}")
+vit_entry.grid(column=1, row=3)
+
+sta_label = tkinter.Label(text="STA")
+sta_label.grid(column=2, row=0)
+sta_entry = tkinter.Entry(width=2)
+sta_entry.insert(0, f"{STA}")
+sta_entry.grid(column=3, row=0)
+
+per_label = tkinter.Label(text="PER")
+per_label.grid(column=2, row=1)
+per_entry = tkinter.Entry(width=2)
+per_entry.insert(0, f"{PER}")
+per_entry.grid(column=3, row=1)
+
+car_label = tkinter.Label(text="CAR")
+car_label.grid(column=2, row=2)
+car_entry = tkinter.Entry(width=2)
+car_entry.insert(0, f"{CAR}")
+car_entry.grid(column=3, row=2)
+
+con_label = tkinter.Label(text="CON")
+con_label.grid(column=2, row=3)
+con_entry = tkinter.Entry(width=2)
+con_entry.insert(0, f"{CON}")
+con_entry.grid(column=3, row=3)
+
+foc_label = tkinter.Label(text="FOC")
+foc_label.grid(column=4, row=0)
+foc_entry = tkinter.Entry(width=2)
+foc_entry.insert(0, f"{FOC}")
+foc_entry.grid(column=5, row=0)
+
+jut_label = tkinter.Label(text="JUT")
+jut_label.grid(column=4, row=1)
+jut_entry = tkinter.Entry(width=2)
+jut_entry.insert(0, f"{JUT}")
+jut_entry.grid(column=5, row=1)
+
+cha_label = tkinter.Label(text="CHA")
+cha_label.grid(column=4, row=2)
+cha_entry = tkinter.Entry(width=2)
+cha_entry.insert(0, f"{CHA}")
+cha_entry.grid(column=5, row=2)
+
+cch_label = tkinter.Label(text="CCH")
+cch_label.grid(column=4, row=3)
+cch_entry = tkinter.Entry(width=2)
+cch_entry.insert(0, f"{CCH}")
+cch_entry.grid(column=5, row=3)
+
+separation = tkinter.Label()
+separation.grid(column=0, row=5, columnspan=3)
+
+hp_label = tkinter.Label(text="HP")
+hp_label.grid(column=0, row=6)
+hp_entry = tkinter.Entry(width=4)
+hp_entry.insert(0, f"{int(vit_entry.get()) * 15 + 30}")
+hp_entry.grid(column=1, row=6)
+
+ch_label = tkinter.Label(text="CH")
+ch_label.grid(column=2, row=6)
+ch_entry = tkinter.Entry(width=4)
+ch_entry.insert(0, f"{int(cha_entry.get()) * 15}")
+ch_entry.grid(column=3, row=6)
+
+st_label = tkinter.Label(text="ST")
+st_label.grid(column=4, row=6)
+st_entry = tkinter.Entry(width=4)
+st_entry.insert(0, f"{int(sta_entry.get()) * 15 + 30}")
+st_entry.grid(column=5, row=6)
+
+separation = tkinter.Label()
+separation.grid(column=0, row=7, columnspan=3)
+
+jyu_label = tkinter.Label(text="Jyuuken")
+jyu_label.grid(column=0, row=8)
+jyu_entry = tkinter.Entry(width=6)
+jyu_entry.grid(column=1, row=8)
+
+san_label = tkinter.Label(text="Sanjuuni")
+san_label.grid(column=2, row=8)
+san_entry = tkinter.Entry(width=6)
+san_entry.grid(column=3, row=8)
+
+sou_label = tkinter.Label(text="Soushiken")
+sou_label.grid(column=4, row=8)
+sou_entry = tkinter.Entry(width=6)
+sou_entry.grid(column=5, row=8)
+
+kai_label = tkinter.Label(text="Kaiten")
+kai_label.grid(column=0, row=9)
+kai_entry = tkinter.Entry(width=6)
+kai_entry.grid(column=1, row=9)
+
+nin_label = tkinter.Label(text="Ninjutsu")
+nin_label.grid(column=2, row=9)
+nin_entry = tkinter.Entry(width=6)
+nin_entry.grid(column=3, row=9)
+
+gen_label = tkinter.Label(text="Genjutsu")
+gen_label.grid(column=4, row=9)
+gen_entry = tkinter.Entry(width=6)
+gen_entry.grid(column=5, row=9)
+
+separation = tkinter.Label()
+separation.grid(column=0, row=10, columnspan=3)
+
+calc = tkinter.Button(text="Calculate", command=calculate)
+calc.grid(column=0, row=11)
+
+root.mainloop()
