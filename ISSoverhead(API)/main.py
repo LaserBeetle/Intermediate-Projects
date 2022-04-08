@@ -31,8 +31,6 @@ time_now = datetime.now()
 now_hour = time_now.hour
 
 if now_hour > sunset or now_hour < sunrise:
-    print("Time works")
     while overhead:
-        print("Overhead Works")
         config.send_email()
         time.sleep(600)
