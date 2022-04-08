@@ -33,4 +33,4 @@ now_hour = time_now.hour
 if now_hour > sunset or now_hour < sunrise:
     while overhead:
         config.send_email()
-        time.sleep(600)
+        time.sleep(60)
